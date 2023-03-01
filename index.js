@@ -17,11 +17,19 @@ const port = process.env.PORT || 5000;
 // });
  
 // Database from freesqldatabase.com
+// const db = mysql.createConnection({
+//   host: "sql9.freesqldatabase.com", 
+//   user: "sql9601909", 
+//   password: "I3zGzaHkMM",
+//   database: "sql9601909" 
+// });
+
+// Database connection from RDS AWS
 const db = mysql.createConnection({
-  host: "sql9.freesqldatabase.com", 
-  user: "sql9601909", 
-  password: "I3zGzaHkMM",
-  database: "sql9601909" 
+  host: "soccerappdb.cavria1dxcva.us-east-2.rds.amazonaws.com", 
+  user: "admin", 
+  password: "Realmadrid2023",
+  database: "soccerappdb" 
 });
 
 // Make to connection to the database.
@@ -31,7 +39,7 @@ db.connect(function(err) {
 });
 
 app.get('/',(req,res)=>{
-  res.json('OK');
+  res.json('API is running...');
 });
 
 
