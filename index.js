@@ -9,11 +9,20 @@ app.use(bodyParser.urlencoded({extended: false}));
 const port = process.env.PORT || 5000;
 
 // create a connection variable with the required details
+// const db = mysql.createConnection({
+//   host: "soccerappdb.cavria1dxcva.us-east-2.rds.amazonaws.com", 
+//   user: "admin", 
+//   password: "Realmadrid2023",
+//   database: "soccerappdb" 
+// });
+
+
+// Database from freesqldatabase.com
 const db = mysql.createConnection({
-  host: "soccerappdb.cavria1dxcva.us-east-2.rds.amazonaws.com", 
-  user: "admin", 
-  password: "Realmadrid2023",
-  database: "soccerappdb" 
+  host: "sql9.freesqldatabase.com", 
+  user: "sql9601909", 
+  password: "I3zGzaHkMM",
+  database: "sql9601909" 
 });
  
 // Make to connection to the database.
