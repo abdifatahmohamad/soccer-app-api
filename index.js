@@ -9,13 +9,21 @@ app.use(bodyParser.urlencoded({extended: false}));
 require('dotenv').config();
 const port = process.env.PORT || 5000;
 
-const db = mysql.createConnection({
-  host: process.env.DB_HOST, 
-  user: process.env.DB_USER, 
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME
-});
+// const db = mysql.createConnection({
+//   host: process.env.DB_HOST, 
+//   user: process.env.DB_USER, 
+//   password: process.env.DB_PASSWORD,
+//   database: process.env.DB_NAME
+// });
  
+// Database from freesqldatabase.com
+const db = mysql.createConnection({
+  host: "sql9.freesqldatabase.com", 
+  user: "sql9601909", 
+  password: "I3zGzaHkMM",
+  database: "sql9601909" 
+});
+
 // Make to connection to the database.
 db.connect(function(err) {
   if (err) throw err;
