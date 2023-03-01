@@ -6,23 +6,14 @@ const cors = require("cors");
 app.use(cors());
 app.use(express.json());
 app.use(bodyParser.urlencoded({extended: false}));
+require('dotenv').config();
 const port = process.env.PORT || 5000;
 
-// create a connection variable with the required details
-// const db = mysql.createConnection({
-//   host: "soccerappdb.cavria1dxcva.us-east-2.rds.amazonaws.com", 
-//   user: "admin", 
-//   password: "Realmadrid2023",
-//   database: "soccerappdb" 
-// });
-
-
-// Database from freesqldatabase.com
 const db = mysql.createConnection({
-  host: "sql9.freesqldatabase.com", 
-  user: "sql9601909", 
-  password: "I3zGzaHkMM",
-  database: "sql9601909" 
+  host: process.env.DB_HOST, 
+  user: process.env.DB_USER, 
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME
 });
  
 // Make to connection to the database.
